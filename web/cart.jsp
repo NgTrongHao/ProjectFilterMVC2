@@ -52,10 +52,10 @@
                     <input type="submit" value="Check-out" name="btAction" />
                 </form>
             </c:if>
-            <c:if test="${empty items}">
+        </c:if>
+        <c:if test="${empty cart.items}">
                 <h2>No items in cart</h2>
                 <a href="storeView">Click here to return BookStore</a>
             </c:if>
-        </c:if>
     </body>
 </html>

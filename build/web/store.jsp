@@ -27,5 +27,6 @@
             <input type="submit" value="Add Book to Your Cart" name="btAction" />
             <input type="submit" value="View Cart" name="btAction" />
         </form>
+        <a href="loginPage">Click here to return to login page</a>
     </body>
 </html>

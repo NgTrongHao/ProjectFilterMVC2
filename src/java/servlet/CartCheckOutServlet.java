@@ -68,12 +68,14 @@ public class CartCheckOutServlet extends HttpServlet {
                                     for (ProductDTO product : products) {
                                         String productId = product.getProductID();
                                         if (key.equals(product.getProductName())) {
-                                            boolean insertOrderDetailResult = orderDetailDAO.insertOrderDetail(count, productId, items.get(key), orderId);
-                                            if (insertOrderDetailResult) {
-                                                if (checkOutItems == null) {
-                                                    checkOutItems = new ArrayList<>();
+                                            if (items.get(key) <= product.getQuantity()) {
+                                                boolean insertOrderDetailResult = orderDetailDAO.insertOrderDetail(count, productId, items.get(key), orderId);
+                                                if (insertOrderDetailResult) {
+                                                    if (checkOutItems == null) {
+                                                        checkOutItems = new ArrayList<>();
+                                                    }
+                                                    checkOutItems.add(key);
                                                 }
-                                                checkOutItems.add(key);
                                             }
                                         }
                                     }
