@@ -14,8 +14,8 @@ public class RegistrationDTO implements Serializable {
 
     private String username;
     private String password;
-    protected String fullName;
-    protected boolean role;
+    private String fullName;
+    private boolean role;
 
     public RegistrationDTO() {
     }

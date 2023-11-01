@@ -189,4 +189,75 @@ public class RegistrationDAO implements Serializable {
         }
         return result;
     }
+
+    public boolean createNewAccount(RegistrationDTO dto)
+            throws SQLException, NamingException {
+        Connection con = null;
+        PreparedStatement stm = null;
+        boolean result = false;
+
+        try {
+            //1. create connection
+            con = DBHelper.createConnection();
+            if (con != null) {
+                //2. create SQL String
+                String sql = "INSERT INTO Registration (username, password, lastname, isAdmin) "
+                        + "VALUES (?, ?, ?, ?)";
+                //3. create StatementObject
+                stm = con.prepareStatement(sql);
+                stm.setString(1, dto.getUsername());
+                stm.setString(2, dto.getPassword());
+                stm.setString(3, dto.getFullName());
+                stm.setBoolean(4, dto.isRole());
+                //4. execute query
+                int effectiveRows = stm.executeUpdate();
+                //5. process
+                if (effectiveRows > 0) {
+                    result = true;
+                }
+            }
+        } finally {
+            if (stm != null) {
+                stm.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return result;
+    }
+
+    public boolean checkExistedUsername(String username)
+            throws SQLException, NamingException {
+        Connection con = null;
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        boolean result = false;
+
+        try {
+            con = DBHelper.createConnection();
+            if (con != null) {
+                String sql = "SELECT username "
+                        + "FROM Registration "
+                        + "WHERE username = ?";
+                stm = con.prepareStatement(sql);
+                stm.setString(1, username);
+                rs = stm.executeQuery();
+                if (rs.next()) {
+                    result = true;
+                }
+            }
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (stm != null) {
+                stm.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return result;
+    }
 }

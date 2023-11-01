@@ -76,4 +76,10 @@ public class ApplicationConstants {
         public static final String STORE_VIEW = "storeView";
         public static final String VIEW_CART = "cartView";
     }
+
+    public class AuthRegisterFeatures {
+
+        public static final String CREATE_ERROR_PAGE = "registerPage";
+        public static final String LOGIN_PAGE = "loginPage";
+    }
 }

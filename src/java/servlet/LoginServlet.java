@@ -43,16 +43,16 @@ public class LoginServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
+        
         ServletContext context = request.getServletContext();
         Properties siteMap = (Properties) context.getAttribute("SITEMAPS");
-
+        
         String url = siteMap.getProperty(ApplicationConstants.LoginFeatures.INVALID_PAGE);
 
         //1. get Request Parameters
         String username = request.getParameter("txtUserName");
         String password = request.getParameter("txtPassword");
-
+        
         try {
             //2. call DAO
             //2.1 new DAO Object
@@ -62,10 +62,11 @@ public class LoginServlet extends HttpServlet {
             //3. process result
             if (result != null) {
                 url = siteMap.getProperty(ApplicationConstants.LoginFeatures.SEARCH_ACTION);
-                Cookie cookie = new Cookie(username, password);
-                cookie.setMaxAge(60 * 5);   //seconds
-                response.addCookie(cookie);
+//                Cookie cookie = new Cookie(username, password);
+//                cookie.setMaxAge(60 * 5);   //seconds
+//                response.addCookie(cookie);
                 HttpSession session = request.getSession(); //login success -> must create session
+                System.out.println("Login Session:" + session);
                 session.setAttribute("USER_INFO", result);
             }//end username and password are verified
         } catch (SQLException ex) {
@@ -73,8 +74,7 @@ public class LoginServlet extends HttpServlet {
         } catch (NamingException ex) {
             log("LoginServlet_Naming: " + ex.getMessage());
         } finally {
-            RequestDispatcher rd = request.getRequestDispatcher(url);
-            rd.forward(request, response);
+            response.sendRedirect(url);
         }
     }
 

@@ -41,6 +41,7 @@ public class StartUpServlet extends HttpServlet {
         String url = ApplicationConstants.StartUpFeatures.LOGIN_PAGE;
         try {
             HttpSession session = request.getSession(false);
+            System.out.println(session);
             if (session != null) {
                 //1. get all cookies
                 Cookie[] cookies = request.getCookies();

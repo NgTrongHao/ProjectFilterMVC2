@@ -3,14 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/Java/Java%20Web%20Application/ProjectFilterMVC2/src/java/registration/RegistrationCreationError.java</file>
             <file>file:/D:/Java/Java%20Web%20Application/ProjectFilterMVC2/src/java/util/ApplicationConstants.java</file>
-            <file>file:/D:/Java/Java%20Web%20Application/ProjectFilterMVC2/web/cart.jsp</file>
-            <file>file:/D:/Java/Java%20Web%20Application/ProjectFilterMVC2/src/java/listener/ContextServletListener.java</file>
-            <file>file:/D:/Java/Java%20Web%20Application/ProjectFilterMVC2/src/java/servlet/CartCheckOutServlet.java</file>
+            <file>file:/D:/Java/Java%20Web%20Application/ProjectFilterMVC2/src/java/servlet/LogoutServlet.java</file>
+            <file>file:/D:/Java/Java%20Web%20Application/ProjectFilterMVC2/web/WEB-INF/web.xml</file>
+            <file>file:/D:/Java/Java%20Web%20Application/ProjectFilterMVC2/src/java/servlet/StartUpServlet.java</file>
             <file>file:/D:/Java/Java%20Web%20Application/ProjectFilterMVC2/src/java/product/ProductDAO.java</file>
-            <file>file:/D:/Java/Java%20Web%20Application/ProjectFilterMVC2/web/store.jsp</file>
+            <file>file:/D:/Java/Java%20Web%20Application/ProjectFilterMVC2/src/java/filter/DispatchFilter.java</file>
             <file>file:/D:/Java/Java%20Web%20Application/ProjectFilterMVC2/web/WEB-INF/siteMap.properties</file>
             <file>file:/D:/Java/Java%20Web%20Application/ProjectFilterMVC2/web/search.jsp</file>
+            <file>file:/D:/Java/Java%20Web%20Application/ProjectFilterMVC2/src/java/servlet/LoginServlet.java</file>
         </group>
     </open-files>
 </project-private>
